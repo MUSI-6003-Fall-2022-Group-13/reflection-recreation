@@ -4,6 +4,14 @@ A recreation/reinterpretation of Brian Eno's "Reflection".
 
 Group 13 final project for MUSI-6003.
 
+## Implementation Details
+This project deals with manipulation of existing midi files and does not generate the midi itself. There are 10 midi files that are selected between each other using a probability matrix. Each note is processed using the below algorithm:
+1. The note is either left as is, or transposed down a third, or down one octave (with probabilities 0.45, 0.14 and 0.41 respectively)
+2. A random duration of silence between 0.1 and 3 seconds is added between the notes to emphasise the concept of "empty space"
+
+todo:
+visual element design, time of day modulation, sound design, bouncing ball delay
+
 ## Running the Max project
 
 First, run the Python script to generate and send MIDI notes over OSC:
