@@ -1,6 +1,5 @@
 import os
 import random
-import matplotlib.pyplot as plt
 import time
 import mido
 from pythonosc import udp_client
@@ -24,7 +23,7 @@ class ReflectionRecreation():
                 midi_file_selected = random.choices(self.MIDI_FILE_NAMES, self.FILE_SELECTION_PROBS)[0]
                 print("-----------------------------------------------------------------------")
                 print(f"Using file: {midi_file_selected}.mid")
-                midi_data = mido.MidiFile(os.path.join(os.path.dirname(__file__),f'{midi_file_selected}.mid'))
+                midi_data = mido.MidiFile(os.path.join(os.path.dirname(__file__),'..','resources',f'{midi_file_selected}.mid'))
                 for msg in midi_data:
                     if not msg.is_meta:
                         if msg.type == 'note_off':
