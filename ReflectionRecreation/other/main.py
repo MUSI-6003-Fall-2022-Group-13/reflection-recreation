@@ -30,13 +30,13 @@ class ReflectionRecreation():
                         if msg.type == 'note_off':
                             time.sleep(msg.time)
                             print(f"Note duration from file: {msg.time} seconds")
-                            self.send_note(self.current_midi_note, "note_off")
+                            self.send_note(self.current_midi_note, 0)
                             continue
                         sleep_dur = random.uniform(0.1, 3)
                         print(f"Adding a rest for {sleep_dur} seconds")
                         time.sleep(sleep_dur)
                         self.current_midi_note = self.process_note(msg.note)
-                        self.send_note(self.current_midi_note, "note_on")
+                        self.send_note(self.current_midi_note, 1)
             except KeyboardInterrupt:
                 print("Keyboard interrupt")
                 break
